@@ -9,16 +9,34 @@ function print(text) {
  * Эту функцию нужно поменять так,
  * чтобы функция sayHello работала корректно
  */
+
 function isValid(name) {
-  // ваш код...
+  let minUserNameLength = 4;
+  if (
+    name == null ||
+    name.length < minUserNameLength ||
+    isContainSpaces(name)
+  ) {
+    return false;
+  }
+  return true;
+
+  function isContainSpaces(string) {
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] == " ") {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 function sayHello() {
-  let userName = prompt('Введите ваше имя');
+  let userName = prompt("Введите ваше имя");
 
   if (isValid(userName)) {
     print(`Welcome back, ${userName}!`);
   } else {
-    print('Некорректное имя');
+    print("Некорректное имя");
   }
 }
