@@ -9,26 +9,8 @@ function print(text) {
  * Эту функцию нужно поменять так,
  * чтобы функция sayHello работала корректно
  */
-
 function isValid(name) {
-  let minUserNameLength = 4;
-  if (
-    name == null ||
-    name.length < minUserNameLength ||
-    isContainSpaces(name)
-  ) {
-    return false;
-  }
-  return true;
-
-  function isContainSpaces(string) {
-    for (let i = 0; i < string.length; i++) {
-      if (string[i] == " ") {
-        return true;
-      }
-    }
-    return false;
-  }
+  return Boolean(name) && !name.includes(" ") && name.length > 3;
 }
 
 function sayHello() {
