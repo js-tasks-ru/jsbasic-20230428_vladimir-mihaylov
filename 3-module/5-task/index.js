@@ -1,5 +1,8 @@
 function getMinMax(str) {
-  let arr = str.split(" ").filter((value) => Number.isFinite(+value));
+  let arr = str
+    .split(" ")
+    .filter((value) => Number.isFinite(+value))
+    .map((num) => Number(num));
   let min = arr[0];
   let max = arr[0];
 
